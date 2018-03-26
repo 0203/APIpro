@@ -31,13 +31,13 @@ var  dateFormattingOptions = {
 
 if (isNaN(dateVal)){
    var naturalDate = new Date(dateVal);
-   naturalDate = naturalDate.toLocalDateString("en-us", dateFormattingOptions);
+   naturalDate = naturalDate.toDateString("en-us", dateFormattingOptions);
    var unixDate = new Date(dateVal).getTime()/1000;
 }
 else{
    var unixDate = dateVal;
    var naturalDate = new Date(dateVal * 1000);
-   naturalDate =  naturalDate.toLocalDateString("en-us", dateFormattingOptions);
+   naturalDate =  naturalDate.toDateString("en-us", dateFormattingOptions);
 }
   
   response.json({unix: unixDate, natural: naturalDate})
