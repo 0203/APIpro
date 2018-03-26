@@ -3,9 +3,9 @@
 
 // init project
 const express = require('express')
-var bodyParser = require("body-parser")
-var cors = require("cors")
-var app = express()
+const bodyParser = require("body-parser")
+const cors = require("cors")
+const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 
@@ -17,11 +17,11 @@ app.use(express.static('public'))
 
 // http://expressjs.com/en/starter/basic-routing.html
 
-app.get("/dateValues/", (request, response) => {
+app.get("/:dateVal", (request, response) => {
+  response.sendFile(_dirname,'/views/index.html')
   var dateVal = request.params.dateVal;
-  response.json({unix:dateVal});
+  response.json({unix:dateVal})
 })
-
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {
