@@ -21,8 +21,28 @@ app.use(express.static('public'))
 app.get("/:dateVal", (request, response) => {
   response.sendFile(__dirname + '/views/index.html')
   var dateVal = request.params.dateVal;
-  response.json({unix:dateVal})
+  
+  
+var  dateFormattingOptions = {
+  year:'numeric',
+  month:'long',
+  day:'numeric'
+}
+
+if (isNaN(dateVal)){
+   var naturalDate = new Date(dateVal);
+   naturalDate = naturalDate.toLocalDateString("en-us", dateFormattingOptions);
+   var unixDate = new Date(dateVal).getTime()/1000;
+}
+else{
+   var unixDate = dateVal;
+   var naturalDate = new Date(dateVal * 1000);
+   naturalDate =  naturalDate.toLocalDateString("en-us", dateFormattingOptions);
+}
+  
+  response.json({unix: unixDate, natural: naturalDate})
 })
+
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {
