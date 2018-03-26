@@ -1,5 +1,6 @@
 dependencies:
   body-parser: 1.18.2
+  cors: 2.8.4
   express: 4.16.3
   nodemon: 1.17.2
 packages:
@@ -323,6 +324,15 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+  /cors/2.8.4:
+    dependencies:
+      object-assign: 4.1.1
+      vary: 1.1.2
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-K9OB8usgECAQXNUOpZ2mMJBpRoY=
   /create-error-class/3.0.2:
     dependencies:
       capture-stack-trace: 1.0.0
@@ -1206,6 +1216,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-NakjLfo11wZ7TLLd8jV7GHFTbF8=
+  /object-assign/4.1.1:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
   /object-copy/0.1.0:
     dependencies:
       copy-descriptor: 0.1.1
@@ -1894,5 +1910,6 @@ shrinkwrapMinorVersion: 4
 shrinkwrapVersion: 3
 specifiers:
   body-parser: ^1.18.2
+  cors: ^2.8.4
   express: ^4.16.3
   nodemon: ^1.17.2

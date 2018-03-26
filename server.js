@@ -5,6 +5,7 @@
 const express = require('express')
 const bodyParser = require("body-parser")
 const cors = require("cors")
+
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
@@ -18,7 +19,7 @@ app.use(express.static('public'))
 // http://expressjs.com/en/starter/basic-routing.html
 
 app.get("/:dateVal", (request, response) => {
-  response.sendFile(_dirname,'/views/index.html')
+  response.sendFile(__dirname + '/views/index.html')
   var dateVal = request.params.dateVal;
   response.json({unix:dateVal})
 })
